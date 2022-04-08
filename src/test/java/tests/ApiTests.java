@@ -68,7 +68,4 @@ public class ApiTests {
                 .then()
                 .statusCode(204);
     }
-
-
-
 }
