@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class ApiTests {
 
@@ -33,7 +34,7 @@ public class ApiTests {
     }
 
     @Test
-    void UpdateUserTests() {
+    void updateUserTests() {
         String dataUpdate = "{\"name\": \"morpheus\", \"job\": \"zion resident\"}";
 
         given()
@@ -47,7 +48,7 @@ public class ApiTests {
     }
 
     @Test
-    void SuccessfulRegisterTest(){
+    void successfulRegisterTest(){
         String dataRegister = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
 
         given()
@@ -57,11 +58,11 @@ public class ApiTests {
                 .post("https://reqres.in/api/register")
                 .then()
                 .statusCode(200)
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .body("token", is(notNullValue()));
     }
 
     @Test
-    void DeleteUserTest(){
+    void deleteUserTest(){
         given()
                 .when()
                 .delete("https://reqres.in/api/users/2")
