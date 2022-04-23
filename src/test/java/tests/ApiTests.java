@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -10,6 +11,7 @@ import static org.hamcrest.Matchers.notNullValue;
 public class ApiTests {
 
     @Test
+    @Disabled
     void getListUsersTest() {
         given()
                 .when()
@@ -20,6 +22,7 @@ public class ApiTests {
     }
 
     @Test
+    @Disabled
     void createUserTests() {
         String data = "{\"name\": \"morpheus\", \"job\": \"leader\"}";
 
@@ -34,6 +37,7 @@ public class ApiTests {
     }
 
     @Test
+    @Disabled
     void updateUserTests() {
         String dataUpdate = "{\"name\": \"morpheus\", \"job\": \"zion resident\"}";
 
@@ -48,6 +52,7 @@ public class ApiTests {
     }
 
     @Test
+    @Disabled
     void successfulRegisterTest(){
         String dataRegister = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
 
@@ -62,6 +67,7 @@ public class ApiTests {
     }
 
     @Test
+    @Disabled
     void deleteUserTest(){
         given()
                 .when()
